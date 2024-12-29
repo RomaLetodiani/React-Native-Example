@@ -209,3 +209,25 @@ export const propertiesImages = [
   "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?q=60&w=640&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "https://images.unsplash.com/photo-1720432972486-2d53db5badf0?q=60&w=640&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 ];
+
+export const propertyTypesArray = [
+  "House",
+  "Townhomes",
+  "Condos",
+  "Duplexes",
+  "Studios",
+  "Villa",
+  "Apartments",
+  "Others",
+];
+
+export const facilitiesArray = [
+  "Laundry",
+  "Car Parking",
+  "Sports Center",
+  "Cutlery",
+  "Gym",
+  "Swimming pool",
+  "Wifi",
+  "Pet Center",
+];
