@@ -1,7 +1,7 @@
 import { User } from "@/types/user.types";
-import { createAgent, createGallery, createProperty, createReview } from "@/constants/seed";
 
 import { logger } from "./logger";
+import { agents, galleries, properties, reviews } from "./seed";
 
 const API_DELAY = 2000;
 // Simulate API call with 2 second delay
@@ -17,13 +17,6 @@ const apiCall = async <T, U>(fn: (...args: U[]) => T) => {
     return null;
   }
 };
-
-export const getCurrentUser = async (): Promise<User | null> =>
-  apiCall(() => ({
-    id: "123",
-    name: "John Doe",
-    email: "john@example.com",
-  }));
 
 export const getLatestProperties = async () => apiCall(() => properties.slice(0, 5));
 
@@ -66,11 +59,3 @@ export const getPropertyById = async (args?: GetPropertyByIdArgs) =>
       agents: agents.filter((agent) => property?.agent.includes(agent.id)),
     };
   });
-
-export const agents = Array.from({ length: 5 }, (_, i) => createAgent(i));
-
-export const reviews = Array.from({ length: 20 }, (_, i) => createReview(i));
-
-export const galleries = Array.from({ length: 5 }, (_, i) => createGallery(i));
-
-export const properties = Array.from({ length: 20 }, (_, i) => createProperty(i));

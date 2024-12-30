@@ -1,6 +1,12 @@
 import icons from "./icons";
 import images from "./images";
 
+export const USER = {
+  id: "123",
+  name: "John Doe",
+  email: "john@example.com",
+};
+
 export const cards = [
   {
     title: "Card 1",

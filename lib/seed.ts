@@ -1,4 +1,3 @@
-import { agents, galleries, reviews } from "@/lib/data";
 import {
   agentImages,
   facilitiesArray,
@@ -6,7 +5,7 @@ import {
   propertiesImages,
   propertyTypesArray,
   reviewImages,
-} from "./data";
+} from "../constants/data";
 
 export const createAgent = (i: number) => ({
   id: `agent-${i}`,
@@ -14,6 +13,8 @@ export const createAgent = (i: number) => ({
   email: `agent${i}@example.com`,
   avatar: agentImages[Math.floor(Math.random() * agentImages.length)],
 });
+
+export const agents = Array.from({ length: 5 }, (_, i) => createAgent(i));
 
 export type Review = ReturnType<typeof createReview>;
 
@@ -26,10 +27,14 @@ export const createReview = (i: number) => ({
   createdAt: new Date().toISOString(),
 });
 
+export const reviews = Array.from({ length: 20 }, (_, i) => createReview(i));
+
 export const createGallery = (i: number) => ({
   id: `gallery-${i}`,
   image: galleryImages[Math.floor(Math.random() * galleryImages.length)],
 });
+
+export const galleries = Array.from({ length: 10 }, (_, i) => createGallery(i));
 
 export const createProperty = (i: number) => {
   const assignedAgent = agents[Math.floor(Math.random() * agents.length)];
@@ -93,3 +98,5 @@ export const getRandomSubset = <T>(array: T[], minItems: number, maxItems: numbe
   // Return the first `subsetSize` elements of the shuffled array
   return arrayCopy.slice(0, subsetSize);
 };
+
+export const properties = Array.from({ length: 20 }, (_, i) => createProperty(i));
