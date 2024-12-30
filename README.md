@@ -1,50 +1,43 @@
-# Welcome to your Expo app 👋
+# Real Estate App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern React Native application for real estate property browsing.
 
-## Get started
+## 📱 Screenshots
 
-1. Install dependencies
+<table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: center; font-weight: 700">
+  <tr>
+    <td style="padding: 0; padding-top: 10px" width="400">
+    <span style="height: 20px">Home</span>
+    <img src="screens/home.jpeg" alt="Home Screen" width="400"/></td>
+    <td style="padding: 0; padding-top: 10px" width="400">
+    <span>Explore</span>
+    <img src="screens/explore.jpeg" alt="Explore Screen" width="400"/></td>
+  </tr>
+  <tr>
+    <td style="padding: 0; padding-top: 10px" width="400">
+    <span>Property</span>
+    <img src="screens/property.jpeg" alt="Property Details" width="400"/></td>
+    <td style="padding: 0; padding-top: 10px" width="400">
+      <span>Profile</span>
+      <img src="screens/profile.jpeg" alt="Profile Screen" width="400"/>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 0; padding-top: 10px" width="400">
+      <span>Login</span>
+      <img src="screens/login.jpeg" alt="Login Screen" width="400"/>
+    </td>
+    <td style="padding: 0" width="400"></td>
+  </tr>
+</table>
 
-   ```bash
-   npm install
-   ```
+## ✨ Features
 
-2. Start the app
+- Property search and filtering
+- Property details with high-quality images
+- User profile customization
+- Multiple property types (Houses, Condos, Duplexes)
 
-   ```bash
-    npx expo start
-   ```
+## 📞 Contact
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+For any inquiries, please reach out to the development team.
