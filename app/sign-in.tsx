@@ -3,18 +3,16 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import images from "@/constants/images";
 import icons from "@/constants/icons";
 
-import { logger } from "@/lib/logger";
 import { useGlobalContext } from "@/lib/global-provider";
 import { Redirect } from "expo-router";
+import { USER } from "@/constants/data";
 
 const SignIn = () => {
-  const { refetch, loading, isLogged } = useGlobalContext();
-
-  if (!loading && isLogged) return <Redirect href="/" />;
+  const { isLogged, setUser } = useGlobalContext();
+  if (isLogged) return <Redirect href="/" />;
 
   const handleSignIn = () => {
-    logger.info("sign in");
-    refetch();
+    setUser(USER);
   };
 
   return (
