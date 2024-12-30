@@ -1,10 +1,11 @@
-import { createContext, useContext, ReactNode } from "react";
+import { createContext, useContext, ReactNode, useState } from "react";
 import { getCurrentUser } from "./data";
 import { useData } from "./useData";
 import { User } from "@/types/user.types";
 
 interface GlobalContextType {
   isLogged: boolean;
+  setIsLogged: (value: boolean) => void;
   user: User | null;
   loading: boolean;
   refetch: () => Promise<void>;
@@ -25,12 +26,13 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
     fn: getCurrentUser,
   });
 
-  const isLogged = !!user;
+  const [isLogged, setIsLogged] = useState(!!user);
 
   return (
     <GlobalContext.Provider
       value={{
         isLogged,
+        setIsLogged,
         user,
         loading,
         refetch,
