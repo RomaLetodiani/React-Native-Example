@@ -25,6 +25,7 @@ const RootLayout = () => {
   if (!fontsLoaded) {
     return null;
   }
+
   return (
     <GlobalProvider>
       <Stack screenOptions={{ headerShown: false }} />

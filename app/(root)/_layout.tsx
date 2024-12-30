@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import { useGlobalContext } from "@/lib/global-provider";
 
-export default function AppLayout() {
+const AppLayout = () => {
   const { loading, isLogged } = useGlobalContext();
 
   if (loading) {
@@ -20,4 +20,6 @@ export default function AppLayout() {
   }
 
   return <Slot />;
-}
+};
+
+export default AppLayout;
