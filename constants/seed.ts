@@ -15,12 +15,15 @@ export const createAgent = (i: number) => ({
   avatar: agentImages[Math.floor(Math.random() * agentImages.length)],
 });
 
+export type Review = ReturnType<typeof createReview>;
+
 export const createReview = (i: number) => ({
   id: `review-${i}`,
   name: `Reviewer ${i}`,
   avatar: reviewImages[Math.floor(Math.random() * reviewImages.length)],
   review: `This is a review by Reviewer ${i}.`,
   rating: Math.floor(Math.random() * 5) + 1, // Rating between 1 and 5
+  createdAt: new Date().toISOString(),
 });
 
 export const createGallery = (i: number) => ({
