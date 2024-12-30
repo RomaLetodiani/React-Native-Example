@@ -1,11 +1,5 @@
 import { User } from "@/types/user.types";
-import {
-  createAgent,
-  createGallery,
-  createProperty,
-  createReview,
-  Property,
-} from "@/constants/seed";
+import { createAgent, createGallery, createProperty, createReview } from "@/constants/seed";
 
 import { logger } from "./logger";
 
@@ -33,15 +27,15 @@ export const getCurrentUser = async (): Promise<User | null> =>
 
 export const getLatestProperties = async () => apiCall(() => properties.slice(0, 5));
 
-interface GetPropertiesArgs {
+type GetPropertiesArgs = {
   filter: string;
   query: string;
   limit?: number;
-}
+};
 
-export const getProperties = async (args: GetPropertiesArgs) =>
-  apiCall<Property[], GetPropertiesArgs>((args) => {
-    const { filter, query, limit = 10 } = args;
+export const getProperties = async (args?: GetPropertiesArgs) =>
+  apiCall(() => {
+    const { filter, query, limit = 10 } = args ?? {};
     let filteredProperties = properties;
 
     if (filter && filter !== "All") {
@@ -58,14 +52,19 @@ export const getProperties = async (args: GetPropertiesArgs) =>
     return filteredProperties.slice(0, limit);
   });
 
-interface GetPropertyByIdArgs {
+type GetPropertyByIdArgs = {
   id: string;
-}
+};
 
-export const getPropertyById = async (args: GetPropertyByIdArgs) =>
-  apiCall<Property | null, GetPropertyByIdArgs>((args) => {
-    const { id } = args;
-    return properties.find((property) => property.id === id) || null;
+export const getPropertyById = async (args?: GetPropertyByIdArgs) =>
+  apiCall(() => {
+    const property = properties.find((property) => property.id === args?.id) || null;
+    return {
+      ...property,
+      reviews: reviews.filter((review) => property?.reviews.includes(review.id)),
+      galleries: galleries.filter((gallery) => property?.gallery.includes(gallery.id)),
+      agents: agents.filter((agent) => property?.agent.includes(agent.id)),
+    };
   });
 
 export const agents = Array.from({ length: 5 }, (_, i) => createAgent(i));
