@@ -1,6 +1,6 @@
 import icons from "@/constants/icons";
 import images from "@/constants/images";
-import { Property } from "@/constants/seed";
+import { Property } from "@/lib/seed";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
 interface Props {

@@ -14,7 +14,7 @@ import icons from "@/constants/icons";
 import images from "@/constants/images";
 import { facilities } from "@/constants/data";
 import { useData } from "@/lib/useData";
-import { getPropertyById, reviews } from "@/lib/data";
+import { getPropertyById } from "@/lib/data";
 import Comment from "@/components/Comment";
 
 const Property = () => {

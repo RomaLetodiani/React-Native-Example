@@ -1,5 +1,4 @@
 import {
-  Alert,
   Image,
   ImageSourcePropType,
   SafeAreaView,
@@ -34,11 +33,9 @@ const SettingsItem = ({ icon, title, onPress, textStyle, showArrow = true }: Set
 );
 
 const Profile = () => {
-  const { user, refetch, setIsLogged } = useGlobalContext();
+  const { user, setUser } = useGlobalContext();
 
-  const handleLogout = async () => {
-    setIsLogged(false);
-  };
+  const handleLogout = () => setUser(null);
 
   return (
     <SafeAreaView className="h-full bg-white">
@@ -50,9 +47,11 @@ const Profile = () => {
 
         <View className="flex flex-row justify-center mt-5">
           <View className="flex flex-col items-center relative mt-5">
-            <div className="size-44 relative rounded-full bg-primary-300">
-              <Text className="text-white text-2xl font-rubik-bold">{user?.name?.charAt(0)}</Text>
-            </div>
+            <View className="size-44 flex items-center justify-center rounded-full bg-primary-200">
+              <Text className="text-primary-300 text-2xl font-rubik-bold">
+                {user?.name?.charAt(0)}
+              </Text>
+            </View>
             <TouchableOpacity className="absolute bottom-11 right-2">
               <Image source={icons.edit} className="size-9" />
             </TouchableOpacity>

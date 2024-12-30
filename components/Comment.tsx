@@ -1,7 +1,7 @@
 import { View, Text, Image } from "react-native";
 
 import icons from "@/constants/icons";
-import { Review } from "@/constants/seed";
+import { Review } from "@/lib/seed";
 
 interface Props {
   item: Review;

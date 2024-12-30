@@ -67,11 +67,11 @@ const Home = () => {
           <View className="px-5">
             <View className="flex flex-row items-center justify-between mt-5">
               <View className="flex flex-row">
-                <div className="size-12 rounded-full bg-primary-300">
-                  <Text className="text-white font-rubik-bold text-base">
+                <View className="size-14 rounded-full flex items-center justify-center bg-primary-200">
+                  <Text className="text-primary-300 font-rubik-bold text-base">
                     {user?.name?.charAt(0)}
                   </Text>
-                </div>
+                </View>
 
                 <View className="flex flex-col items-start ml-2 justify-center">
                   <Text className="text-xs font-rubik text-black-100">Good Morning</Text>
